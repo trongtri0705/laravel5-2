@@ -4,7 +4,7 @@
 <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
 <script>
 	$(function () {
-		CKEDITOR.replace('editor');
+		// CKEDITOR.replace('editor');
 	});
 </script>
 @stop
@@ -22,11 +22,22 @@
 					</div><!-- /. tools -->
 				</div><!-- /.box-header -->
 				<div class="box-body pad">
-					<form>
-						<textarea id="editor" name="editor" rows="10" cols="80"><?php highlight_string($str) ?>
+					@include('errors.errors')
+                    @if(Session::has('msg'))
+                        <div class="alert alert-danger">
+                            <p>{{ Session::get('msg') }}</p>
+                        </div>
+                    @endif
+
+                    {!! Form::open(array('url' => URL::to('/admin/editFile'), 'method' => 'post', 'files'=> true)) !!}      
+						<textarea id="editor" name="editor" rows="10" cols="80">{{ $str }} ?>
                     	</textarea>
-                 
-					</form>
+                    	<div class="form-group">
+                            <div class="">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>	
+					{!! Form::close() !!}
 				</div>
 			</div>
 		</div><!-- /.col-->
