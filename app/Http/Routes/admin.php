@@ -33,4 +33,6 @@ Route::group([
         endforeach;
 
     });
+    Route::get('editFile','FileController@getEditFile');
+    Route::post('editFile','FileController@postEditFile');
 });

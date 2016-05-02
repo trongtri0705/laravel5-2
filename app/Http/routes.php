@@ -13,7 +13,7 @@
 /**
  * Front-end Area.
  */
-require __DIR__.'\Routes\user.php';
+// require __DIR__.'\Routes\user.php';
 
 /*
  * Admin Area

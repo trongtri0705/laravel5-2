@@ -116,7 +116,12 @@ class AdminController extends Controller
                 'label' => 'Users',
                 'icon' => 'fa-user',
                 'isActive' => $controller == 'UserController' || $controller == 'MediumController' || $controller == 'SourceController',
-            ],            
+            ], 
+            [
+                'link' => '/admin/editFile',
+                'label' => 'Edit File Demo',
+                'icon' => 'fa-edit',                
+            ],             
             [
                 'link' => '/',
                 'label' => 'Front End',
